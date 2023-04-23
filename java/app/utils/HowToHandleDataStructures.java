@@ -3,13 +3,18 @@ package utils;
 import java.util.*;
 
 public class HowToHandleDataStructures {
+	public static void main(String args[]) {
+		HowToHandleDataStructures.listExample();
+	}
+	
     public static void arrayExample() {
         // Array simples
         int[] priceOfPen= new int[5];
 
         Scanner in=new Scanner(System.in);
 	    for(int i=0;i<priceOfPen.length;i++){
-	        priceOfPen[i]=in.nextInt();
+	        System.out.println("Digite um inteiro:");
+	    	priceOfPen[i]=in.nextInt();
         }
         
         for(int i=0;i<priceOfPen.length;i++){
@@ -31,15 +36,6 @@ public class HowToHandleDataStructures {
         for(Integer item : lista) {
           System.out.println(item);
         }
-
-        // Scanner in=new Scanner(System.in);
-	    // for(int i=0;i<priceOfPen.length;i++){
-	    //     priceOfPen[i]=in.nextInt();
-        // }
-        
-        // for(int i=0;i<priceOfPen.length;i++){
-		//     System.out.print(priceOfPen[i]+" ");
-        // }
     }
    
 }  
