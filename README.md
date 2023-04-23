@@ -11,6 +11,28 @@ Todos os containers são construídos através do seu respectivo Dockerfile.
 
 Os containers dedicados para as linguagens de programação possuem uma pasta chamada /app em sua estrutura de diretórios. Nessa pasta é possível encontrar um código inicial, com informações básica de compilação/execução, que deverá ser evoluído durante o estudo.
 
+# Iniciando/Parando o ambiente
+Para controlar o ambiente de desenvolvimento basta utilizar os comandos contidos no arquivo Makefile.
+
+Os comandos abaixo devem ser executados na raiz do projeto
+```
+# Iniciar o ambiente construindo as imagens e inciando o container de banco de dados
+:$ make start
+
+```
+
+```
+# Parar o ambiente
+:$ make stop
+
+```
+
+```
+# Remover todos os containers do ambiente (incluindo dados persistidos)
+:$ make remove-all
+
+```
+
 ### MySQL
 * Container dedicado para persistir os dados durante o aprendizado das linguagens de programação.
 * Único container que fica sempre com o status ativo.
@@ -50,26 +72,9 @@ Os containers dedicados para as linguagens de programação possuem uma pasta ch
 
 Acesso através do navegador em http://localhost:8080 enquanto o container estiver rodando.
 
-# Iniciando/Parando o ambiente
-Para controlar o ambiente de desenvolvimento basta utilizar os comandos contidos no arquivo Makefile.
-
-Os comandos abaixo devem ser executados na raiz do projeto
+# Considerações finais
 ```
-# Iniciar o ambiente construindo as imagens e inciando o container de banco de dados
-:$ make start
-
-```
-
-```
-# Parar o ambiente
-:$ make stop
-
-```
-
-```
-# Remover todos os containers do ambiente (incluindo dados persistidos)
-:$ make remove-all
-
+Bons estudos!
 ```
 
 
