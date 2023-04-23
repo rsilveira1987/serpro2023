@@ -16,10 +16,6 @@ package database;
 import java.sql.*;  
 
 public class MysqlDatabase {
-
-    public static void main(String args[]) {
-        MysqlDatabase.selectExample();
-    }
     
     public static void insertExample(String firstName, String secondName, String email){  
                 
@@ -33,7 +29,7 @@ public class MysqlDatabase {
             preparedStmt.setString (1, firstName);
             preparedStmt.setString (2, secondName);
             preparedStmt.setString (3, email);
-        
+                    
             // execute the preparedstatement
             preparedStmt.execute();
 
