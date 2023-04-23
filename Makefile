@@ -22,10 +22,10 @@ js-sh: ## Javascript app shell
 	docker run --network host -it --rm -v ${PWD}/javascript/app:/var/www/html js_app:latest
 
 java-sh: ## Java app shell
-	docker run --network host -it --rm -v ${PWD}/java/app:/java-app java_app /bin/bash
+	docker run --network host -it --rm -v ${PWD}/java/app:/java-app java_app:latest /bin/bash
 
 python-sh: ## Python app shell
-	docker run --network host -it --rm -v ${PWD}/python/app:/python-app python_app /bin/bash
+	docker run --network host -it --rm -v ${PWD}/python/app:/python-app python_app:latest /bin/bash
 
 mysql-sh: ## MYSQL shell
 	docker exec -it db /bin/bash

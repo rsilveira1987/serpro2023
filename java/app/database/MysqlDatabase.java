@@ -16,6 +16,10 @@ package database;
 import java.sql.*;  
 
 public class MysqlDatabase {
+
+    public static void main(String args[]) {
+        MysqlDatabase.selectExample();
+    }
     
     public static void insertExample(String firstName, String secondName, String email){  
                 

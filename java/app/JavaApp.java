@@ -32,18 +32,5 @@ public class JavaApp {
     int z=x+y;
     System.out.println("Sum of x+y = " + z);
 
-    Pessoa p1 = new Pessoa();
-    p1.setFirstName("Ricardo");
-    p1.setSecondName("Silveira");
-    p1.setEmail("rsilveira1987@gmail.com");
-    System.out.println(p1.toString());
-    System.out.println(p1.toMap());
-
-
-    MysqlDatabase.selectExample();
-    // MysqlDatabase.insertExample("PrimeiroNome","SegundoNome","email@gmail.com");
-    // MysqlDatabase.deleteExample(10);
-    // MysqlDatabase.updateExample(1,"PrimeiroNome","SegundoNome","email@gmail.com");
-
   }
 }
