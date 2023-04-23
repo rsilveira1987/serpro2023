@@ -66,7 +66,7 @@ Os comandos abaixo devem ser executados na raiz do projeto
 * Ocupa a porta 8080 da máquina host
 
 ```
-# Acessar o shell do container Python
+# Acessar o shell do container Javascript
 :$ make js-sh
 ```
 
