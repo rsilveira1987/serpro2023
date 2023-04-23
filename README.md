@@ -73,8 +73,7 @@ Os comandos abaixo devem ser executados na raiz do projeto
 Acesso através do navegador em http://localhost:8080 enquanto o container estiver rodando.
 
 # Considerações finais
-```
 Bons estudos!
-```
+
 
 
