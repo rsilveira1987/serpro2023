@@ -10,7 +10,7 @@
     <style>
         .yes::after {
             display: block;
-            content: 'Javascript Works!';
+            content: 'Javascript works!';
         }
         .no::after {
             display: block;
