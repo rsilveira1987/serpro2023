@@ -25,13 +25,19 @@ public class HowToHandleDataStructures {
     public static void listExample() {
         
         List<Integer> lista = new ArrayList<Integer>();
-        lista.add(1);
-        lista.add(2);
-        lista.add(4);
-        lista.add(8);
         lista.add(16);
         lista.add(32);
+        lista.add(4);
+        lista.add(8);
+        lista.add(1);
+        lista.add(2);
     
+//        Collections.sort(lista);
+//        Collections.reverse(lista);
+        
+        Collections.sort(lista);
+        Collections.reverse(lista);
+        
         // O foreach do Java é um for com o tipo do item da lista
         for(Integer item : lista) {
           System.out.println(item);

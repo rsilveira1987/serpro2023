@@ -10,6 +10,8 @@
  *      UNIQUE KEY `email` (`email`)
  * ) ENGINE = InnoDB; 
  * 
+ * Como obter uma conexao ao MYSQL (DSN)
+ * Connection conn=DriverManager.getConnection("jdbc:mysql://<server_addr>:3306/mydatabasename?characterEncoding=utf8","<user>","<password>");
  */
 package database;
 
@@ -47,9 +49,9 @@ public class MysqlDatabase {
             Class.forName("com.mysql.jdbc.Driver");  
             Connection conn=DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/mydatabase?characterEncoding=utf8","root","root");  
             
-            Statement stmt=conn.createStatement();
             String query="SELECT * FROM tb_accounts";
-            ResultSet rs=stmt.executeQuery(query);  
+            PreparedStatement preparedStmt = conn.prepareStatement(query);
+            ResultSet rs = preparedStmt.executeQuery(query);  
             
             while(rs.next()) {
                 int id=rs.getInt("id");
