@@ -1,5 +1,5 @@
 
-import flashcardsWord from './flashcards.js';
+// import flashcardsWord from './flashcards.js';
 
 const flashcardContainer = document.getElementById("flashcard-container");
 
