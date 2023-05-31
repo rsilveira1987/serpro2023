@@ -1,8 +1,8 @@
 .grid-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* Define 4 colunas de tamanho igual */
-    grid-gap: 10px; Define o espaçamento entre os flashcards
-    justify-items: center; /* Centraliza horizontalmente os flashcards */
+    grid-gap: 10px; /*Define o espaçamento entre os flashcards */
+    justify-items: center /* Centraliza horizontalmente os flashcards */
 }
 
 .flashcard {
