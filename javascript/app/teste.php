@@ -16,11 +16,12 @@
             display: block;
             content: 'Javascript doesn\'t work!';
         }
+
     </style>
 
-    <h1 id="title" class="yes">Teste</h1>
-    <button id="btnToggler">Click-me</button>
-    
-    <script src="script.js?random=<? time() ?>"></script>
+
+    <h1 id="title" class="yes"></h1> 
+    <button id="btnToggler">Click-me</button>    
+    <script src="teste.js?random=<? time() ?>"></script>
 </body>
 </html>
