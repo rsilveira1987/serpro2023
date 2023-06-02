@@ -1,3 +1,4 @@
+#!/usr/local/bin/python
 """
 MYSQL Schema
   
@@ -11,6 +12,7 @@ MYSQL Schema
   ) ENGINE = InnoDB; 
    
 """
+# importar a biblioteca do MySQL
 import mysql.connector
 
 def insertExample(first_name,second_name,email):
@@ -53,6 +55,19 @@ def selectExample():
     for x in myresult:
         print(x)
 
+def selectIdExample(id):
+    conn = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="root",
+        database="mydatabase"
+    )
+    cursor = conn.cursor()
+    sqlQuery = "SELECT * FROM tb_accounts WHERE id = %s" %(id)
+    cursor.execute(sqlQuery)
+    result = cursor.fetchall()
+    for r in result:
+        print(r)
 
 def deleteExample(id):
     conn = mysql.connector.connect(
