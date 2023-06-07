@@ -1,0 +1,41 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+  }
+
+  body {
+    background-color: #007A78;
+    color: #FFC745;
+    font-size: 18pt;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    background-color: #EEDDD1;
+    color: #007A78;
+  }
+  
+  header img {
+    width: 50px;
+    margin-right: 10px;
+  }
+  
+  header h1 {
+    font-size: 24pt;
+  }
+
+  /* Estilos para a funcionalidade de arrastar e soltar */
+  .drag-over {
+    background-color: #f7f7f7;
+  }
+
+  .draggable {
+    cursor: move;
+  }

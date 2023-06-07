@@ -5,6 +5,16 @@
     justify-items: center /* Centraliza horizontalmente os flashcards */
 }
 
+.contador {
+    
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    color: #333;
+    line-height: 10px;
+  }
+
+
 .flashcard {
     width: 100%;
     height: 100px;
@@ -21,7 +31,7 @@
 }
 
 .flashcard.flipped {
-    background-color: #084600; /* Cor de fundo quando o flashcard estiver virado */
+    background-color: #0c4a9f; /* Cor de fundo quando o flashcard estiver virado */
 }
 
 .flashcard.flipped .front {
@@ -38,12 +48,14 @@
     backface-visibility: hidden;
 }
 
+
 .front {
     transform: rotateY(0);
     z-index: 2;
 }
 
 .back {
+    text-align: center;
     transform: rotateY(-180deg);
 }
 
@@ -51,3 +63,23 @@
     color: #ffffff;
 }
 
+.acertei-link {    
+    color: rgb(34, 252, 34);
+    margin-right: 10px;
+    font-size: 18px;
+    
+}
+.errei-link {
+    color: red;
+    font-size: 18px;
+    
+}
+
+.link-container {
+    /* position: absolute; */
+    /* bottom: 10px; */
+    left: 0;
+    right: 0;
+    text-align: center;
+    vertical-align: bottom;
+}
