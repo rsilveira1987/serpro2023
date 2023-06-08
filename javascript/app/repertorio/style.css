@@ -32,10 +32,6 @@ table {
   }
 
   /* Estilos para a funcionalidade de arrastar e soltar */
-  .drag-over {
-    background-color: #f7f7f7;
-  }
-
-  .draggable {
+  .drag-handle {
     cursor: move;
   }
