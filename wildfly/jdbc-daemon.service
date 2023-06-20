@@ -1,0 +1,13 @@
+# This service unit is for testing timer units 
+# By Ricardo Silveira
+# Licensed under GPL V2
+#
+
+[Unit]
+Description=My Shell Script
+
+[Service]
+ExecStart=/tmp/jdbc-daemon.sh
+
+[Install]
+WantedBy=multi-user.target

@@ -10,7 +10,6 @@ help: ## This help
 
 start: ## Iniciar containers
 	docker-compose up --no-start
-	docker-compose up -d mysql
 	docker-compose up -d pgsql
 
 stop: ## Parar containers
@@ -38,6 +37,12 @@ mysql-sh: ## MYSQL shell: mysql -uroot -proot mydatabse
 
 pgsql-sh: ## PGSQL shell: psql -U postgres mydatabase
 	docker exec -it pgsql /bin/bash
+
+wildfly-sh: ## Wildfly 
+	docker run --network host -it --rm wildfly_standalone:latest
+
+wildfly-bash: ## Wildfly 
+	docker exec -it wildfly_standalone /bin/bash
 
 
 
