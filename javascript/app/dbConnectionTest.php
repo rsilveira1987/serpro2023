@@ -6,16 +6,20 @@
  */
 
     $host       = "127.0.0.1";
-    $port       = 3306;
+    $port       = 5432;
     $dbname     = "mydatabase";
-    $user       = "root";
-    $pass       = "root";
+    $user       = "postgres";
+    $pass       = "postgres";
 
     
     try {
-        // Cria um DSN para conectar em um banco de dados MYSQL
-        $conn = new PDO("mysql:host={$host};port={$port};dbname={$dbname}", $user, $pass);
-
+        // MySQL
+        // $conn = new PDO("mysql:host={$host};port={$port};dbname={$dbname}", $user, $pass);
+        
+        // PostgreSQL
+        $dsn = "pgsql:host=$host;port=$port;dbname=$dbname;";
+        $conn = new PDO($dsn, $user, $pass, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+        
         // Habilita PDO exceptions (para debug)
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);        
 

@@ -51,25 +51,25 @@ services:
     volumes:
         - ./python/app:/python_app/
 
-  mysql:
-    container_name: db
-    image: mysql:5.6.51
-    command: --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
-    restart: always
-    environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_PASSWORD=root
-      - MYSQL_DATABASE=mydatabase
-    expose:
-      - 3306
-    volumes:
-      - mydatabase:/var/lib/mysql
-      - ./mysql/schema.sql:/docker-entrypoint-initdb.d/1.sql
-      - ./mysql/init.sql:/docker-entrypoint-initdb.d/2.sql
-    network_mode: host
+  # mysql:
+  #   container_name: mysqldb
+  #   image: mysql:5.6.51
+  #   command: --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+  #   restart: always
+  #   environment:
+  #     - MYSQL_ROOT_PASSWORD=root
+  #     - MYSQL_PASSWORD=root
+  #     - MYSQL_DATABASE=mydatabase
+  #   expose:
+  #     - 3306
+  #   volumes:
+  #     - mysql_data:/var/lib/mysql
+  #     - ./mysql/schema.sql:/docker-entrypoint-initdb.d/1.sql
+  #     - ./mysql/init.sql:/docker-entrypoint-initdb.d/2.sql
+  #   network_mode: host
   
   pgsql:
-    container_name: pgsql
+    container_name: pgsqldb
     image: postgres:14.8
     restart: always
     environment:
@@ -79,13 +79,32 @@ services:
     expose:
       - 5432
     volumes:
-      - postgresql_data:/var/lib/postgresql/data
+      #- postgresql_data:/var/lib/postgresql/data
+      - ./pgsql/data:/var/lib/postgresql/data
       - ./pgsql/schema.sql:/docker-entrypoint-initdb.d/1-schema.sql
       - ./pgsql/init.sql:/docker-entrypoint-initdb.d/2-init.sql
     network_mode: host
+  
+  wildfly:
+    container_name: wildfly_standalone
+    image: wildfly_standalone:latest
+    build:
+      context: ./wildfly
+      dockerfile: Dockerfile
+    restart: always
+    expose:
+      - 8080
+      - 9990
+    # ports:
+    #   - 8080:8080
+    #   - 9990:9990
+    environment:
+      - WILDFLY_HOME=/opt/jboss/wildfly
+      - JBOSS_CLI=/opt/jboss/wildfly/bin/jboss-cli.sh
+
 
 volumes:
-  mydatabase:
+  mysql_data:
     driver: local
   postgresql_data:
     driver: local
